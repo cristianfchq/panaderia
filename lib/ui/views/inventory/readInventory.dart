@@ -18,9 +18,58 @@ class _ReadInventoryState extends State<ReadInventory> {
     final productProvider = Provider.of<CRUDModelInventory>(context);
 
     return Scaffold(
+//      floatingActionButton: Stack(
+//        children: <Widget>[
+//          Padding(
+//            padding: EdgeInsets.only(left: 31),
+//            child: Align(
+//              alignment: Alignment.bottomLeft,
+//              child: FloatingActionButton(
+//                onPressed: () {
+//                  Navigator.pushNamed(context, '/addInventory');
+//                },
+//                child: Icon(Icons.remove),
+//              ),
+//            ),
+//          ),
+//          Align(
+//            alignment: Alignment.bottomRight,
+//            child: FloatingActionButton(
+//              onPressed: () {
+//                Navigator.pushNamed(context, '/addInventory');
+//              },
+//              child: Icon(Icons.add),
+//            ),
+//          ),
+//        ],
+//      ),
+
+//      floatingActionButton: Stack(
+//        children: <Widget>[
+//          Align(
+//            alignment: Alignment.bottomLeft,
+//            child: FloatingActionButton(
+//              onPressed: () {
+//                Navigator.pushNamed(context, '/addInventory');
+//              },
+//              child: Icon(Icons.remove),
+//            ),
+//          ),
+//          Align(
+//            alignment: Alignment.bottomRight,
+//            child: FloatingActionButton(
+//              onPressed: () {
+//                Navigator.pushNamed(context, '/addInventory');
+//              },
+//              child: Icon(Icons.add),
+//            ),
+//          ),
+//        ],
+//      ),
+
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.pushNamed(context, '/addInventory');
+          Navigator.pushNamed(context, '/removeInventory');
         },
         child: Icon(Icons.add),
       ),
@@ -41,7 +90,9 @@ class _ReadInventoryState extends State<ReadInventory> {
                       InventoryCard(product: products[index]),
                 );
               } else {
-                return Center(child: Text('Cargando datos...'),);
+                return Center(
+                  child: Text('Cargando datos...'),
+                );
               }
             }),
       ),
